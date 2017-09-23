@@ -49,11 +49,11 @@ endif
 set undolevels=1000 "maximum number of changes that can be undone
 
 " Color
-colorscheme vibrantink
+colorscheme base16-railscasts
 
-au FileType diff colorscheme desert
-au FileType git colorscheme desert
-au BufWinLeave * colorscheme vibrantink
+"au FileType diff colorscheme desert
+"au FileType git colorscheme desert
+"au BufWinLeave * colorscheme base16-railscasts
 
 augroup markdown
   au!
@@ -165,6 +165,14 @@ let g:rails_projections = {
       \     "alternate": "script/{}.rb"
       \   }
       \ }
+let g:CommandTMaxHeight = 15
+let g:CommandTMatchWindowAtTop = 1
+let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
+let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
+let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
+let g:CommandTWildIgnore=&wildignore . ",vendor/cache/**,node_modules/**,bower_components/**"
+
+let g:vim_markdown_folding_disabled=1
 
 if exists(':RainbowParenthesesToggle')
   autocmd VimEnter *       RainbowParenthesesToggle
@@ -290,18 +298,18 @@ function! StartInferiorSlimeServer()
 endfunction
 command! -nargs=0 StartInferiorSlimeServer :call StartInferiorSlimeServer()
 
-function! __Edge()
-  colorscheme Tomorrow-Night
-  au BufWinLeave * colorscheme Tomorrow-Night
-
-  set ttyfast
-
-  map <leader>nf :e%:h<CR>
-  map <C-p> :CommandT<CR>
-
-  let g:VimuxOrientation = "h"
-  let g:VimuxHeight = "40"
-endfunction
+"function! __Edge()
+"  colorscheme Tomorrow-Night
+"  au BufWinLeave * colorscheme Tomorrow-Night
+"
+"  set ttyfast
+"
+"  map <leader>nf :e%:h<CR>
+"  map <C-p> :CommandT<CR>
+"
+"  let g:VimuxOrientation = "h"
+"  let g:VimuxHeight = "40"
+"endfunction
 
 function! __HardMode()
   nmap h <nop>
