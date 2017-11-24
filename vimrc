@@ -37,6 +37,7 @@ set smartcase
 set wildignore+=*.pyc,*.o,*.class,*.lo,.git,vendor/*,node_modules/**,bower_components/**,*/build_gradle/*,*/build_intellij/*,*/build/*,*/cassandra_data/*
 set tags+=gems.tags
 set mouse=
+set ttymouse=
 set backupcopy=yes " Setting backup copy preserves file inodes, which are needed for Docker file mounting
 set complete-=t " Don't use tags for autocomplete
 
@@ -148,7 +149,7 @@ let g:gist_clip_command = 'pbcopy'
 let g:gist_detect_filetype = 1
 
 let g:rubycomplete_buffer_loading = 1
-
+let g:ruby_indent_assignment_style = 'variable'
 
 let g:no_html_toolbar = 'yes'
 
@@ -200,8 +201,6 @@ let g:vim_markdown_folding_disabled = 1
 
 let g:go_fmt_command = "goimports"
 let g:go_highlight_trailing_whitespace_error = 0
-
-let g:completor_auto_trigger = 0
 
 " ========= Shortcuts ========
 
