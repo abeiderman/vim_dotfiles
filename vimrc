@@ -38,7 +38,6 @@ set wildignore+=*.pyc,*.o,*.class,*.lo,.git,vendor/*,node_modules/**,bower_compo
 set tags+=gems.tags
 set mouse=
 set backupcopy=yes " Setting backup copy preserves file inodes, which are needed for Docker file mounting
-set signcolumn=yes
 set complete-=t " Don't use tags for autocomplete
 
 if version >= 703
@@ -48,12 +47,17 @@ if version >= 703
 endif
 set undolevels=1000 "maximum number of changes that can be undone
 
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+
 " Color
-colorscheme base16-railscasts
+colorscheme base16-default-dark
 
 "au FileType diff colorscheme desert
 "au FileType git colorscheme desert
-"au BufWinLeave * colorscheme base16-railscasts
+"au BufWinLeave * colorscheme base16-default-dark
 
 augroup markdown
   au!
